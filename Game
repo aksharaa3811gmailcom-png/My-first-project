@@ -1,0 +1,27 @@
+import random
+
+print("🎮 Hey Devu, Welcome to Guess The Number Game! 🎮")
+print("ഞാൻ 1 മുതൽ 50 വരെ ഒരു Number മനസ്സിൽ വിചാരിച്ചു.")
+print("നിനക്ക് 5 Chance ഉണ്ട്. കണ്ടുപിടിക്കാമോ?")
+
+secret_number = random.randint(1, 50)
+chances = 5
+
+for i in range(chances):
+    print(f"\n--- Chance {i+1} ---")
+    guess = int(input("നിന്റെ Guess അടിക്ക്: "))
+    
+    if guess == secret_number:
+        print(f"🎉 Correct Devu! നീ ജയിച്ചു! Number {secret_number} തന്നെ")
+        print("Google-ൽ ജോലി ഉറപ്പ് 😎")
+        break
+    elif guess < secret_number:
+        print("❌ കുറച്ച് കൂടി വല്യ Number അടിക്ക്")
+    else:
+        print("❌ കുറച്ച് കൂടി ചെറിയ Number അടിക്ക്")
+        
+    if i == chances - 1:
+        print(f"\n😢 Chances തീർന്നു! Number {secret_number} ആയിരുന്നു")
+        print("സാരമില്ല, വീണ്ടും Play ചെയ്യ്")
+
+print("\nGame ഉണ്ടാക്കിയത്: Devu 👑")
